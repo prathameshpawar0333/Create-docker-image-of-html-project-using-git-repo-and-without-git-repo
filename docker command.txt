@@ -1,0 +1,39 @@
+NODE 1
+create node 1
+docker --version
+docker pull ubuntu 
+docker --name webserver -p 80:80 -i -t ubuntu bin/bash
+apt-get install apache2
+apt-get install git 
+apt-get install nano
+service apache2 start
+service apache2 status
+cd /var/www/html
+ls
+rm -r index.html
+nano index.html
+-->type your html code here
+go to open port type port 80
+
+""""""""""clone abc.html project from git hub""""""\
+git clone <project url>
+ls
+cp <github repo folder path> /var/www/html
+cd /var/www/html
+rm -r index.html
+go to oprn port type 80
+
+exit
+docker login
+give your pass and username
+docker ps -a
+docker commit <container id> username(dockerhub)/repo:TAG
+docker push username(dockerhub)/repo:TAG
+
+node 2
+create Node2
+docker pull username(dockerhub)/repo:TAG
+docker --name webserver -p 80:80 -i -t username(dockerhub)/repo:TAG
+service apache2 start
+service apache2 status
+go to open port and type port 80
